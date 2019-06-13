@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>教育費</title>
+  </head>
+  <body class ="put_center">
+    <%if flash[:notice]%>
+    <div class = "flash">
+      <%= flash[:notice]%>
+    </div>
+    <%end%>
+    <div class="headder">
+      <h1>教育費はどれくらいかけますか</h1>
+    </div>
+  <%= form_tag("child_rearing") do %>
+    <div class = "main">
+      <div class ="contents">
+        <div class ="rearing_btn">
+          <button  class = "btn_child_rearing" name="select_expenses" type="submit" value="782">公立コース：782万円</button>
+        </div>
+        <div class ="rearing_btn">
+            <button  class = "btn_child_rearing" name="select_expenses" type="submit" value="930">公立～私立大学文系コース：930万円</button>
+        </div>
+        <div class ="rearing_btn">
+          <button  class = "btn_child_rearing" name="select_expenses" type="submit" value="1105">高校から私立〜私立大学文系コース：1105万円</button>
+        </div>
+        <div class ="rearing_btn">
+            <button  class = "btn_child_rearing" name="select_expenses" type="submit" value="1501">中学から私立〜私立大学理系コース：1501万円</button>
+        </div>
+        <div class="rearing_btn">
+          <button  class = "btn_child_rearing" name="select_expenses" type="submit" value="2224">小学校から私立〜私立大学理系コース：2224万円</button>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>子育て開始時期</title>
+  </head>
+  <body class = "put_center">
+    <%if flash[:notice]%>
+    <div class = "flash">
+      <%= flash[:notice]%>
+    </div>
+    <%end%>
+    <div class="headder">
+      <h1>子育て開始時期は？</h1>
+    </div>
+  <%= form_tag("add_educational_expenses_flow") do %>
+    <div class = "main">
+      <div class ="contents">
+        <div>
+          <input class ="user_input_area" name="start_age" autocomplete="off" value="<%=@age[0]%>">
+        </div>
+        <div>
+          <input class = "btn" type = "submit" value = "次へ">
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </body>
+</html>

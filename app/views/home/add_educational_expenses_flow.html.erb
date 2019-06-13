@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<%require 'bigdecimal'%>
+<html>
+<head>
+  <div class="headder">
+    <h1>教育費をくわえたキャッシュフロー表</h1>
+  </div>
+</head>
+<body>
+  <div class="container">
+    <table class="table" border="1" align="center">
+      <tr>
+        <th class="row">年</th>
+        <% @after_years.times do |count|%>
+        <td><%=@years + count %></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row">経過年数</th>
+        <% @after_years.times do |count| %>
+        <%if count === 0 %>
+        <td>現在</td>
+        <%else%>
+        <td><%=count%>年後</td>
+        <%end%>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row">年齢</th>
+        <% @age.each do |age| %>
+        <td><%=age%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_income">収入</th>
+        <% @income.each do |income| %>
+        <td class = "td_income"><%=income%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_income">配偶者の収入</th>
+        <% @income_spouse.each do |income_spouse| %>
+        <td class = "td_income"><%=income_spouse%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_income">収入合計</th>
+        <% @income_sum.each do |income_sum| %>
+        <td class = "td_income_sum"><%=income_sum%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row">ライフイベント</th>
+        <% @life_event.each do |life_event| %>
+        <td><%=life_event%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">基本生活費</th>
+        <% @cost_of_living.each do |cost_of_living| %>
+        <td class = "td_row"><%=cost_of_living%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">住居関連費</th>
+        <% @after_years.times do |count| %>
+        <td class = "td_row"><%=@cost_of_house.round  %></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">車両費</th>
+        <% @cost_of_auto.each do |cost_of_auto| %>
+        <td class = "td_row"><%=cost_of_auto%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">教育費</th>
+        <% @spllit_educational_expenses.each do |spllit_educational_expenses| %>
+        <td class = "td_row"><%=spllit_educational_expenses%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">保険料</th>
+        <% @cost_of_insurance.each do |cost_of_insurance| %>
+        <td class = "td_row"><%=cost_of_insurance%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row_cost">その他支出</th>
+        <% @cost_of_other.each do |cost_of_other| %>
+        <td class = "td_row"><%=cost_of_other%></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="td_row">支出合計</th>
+        <% @spending_sum.each do |spending_sum| %>
+        <td class="td_row_sum"><%=spending_sum %></td>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row">年間支出</th>
+        <% @years_spending.each do |years_spending| %>
+          <%if years_spending < 0%>
+            <td><span class="caution"><%=years_spending %></span></td>
+          <%else%>
+            <td><%=years_spending %></td>
+          <%end%>
+        <%end%>
+      </tr>
+      <tr>
+        <th class="row">貯蓄残高</th>
+        <% @asset.each do |asset| %>
+        <td><%=asset %></td>
+        <%end%>
+      </tr>
+    </table>
+  </div>
+  <div>
+    <a  class = "return_top" href="/top" style="text-decoration:none">戻る</a>
+  </div>
+</body>
+</html>
