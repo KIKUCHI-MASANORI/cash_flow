@@ -1,3 +1,5 @@
 entrypoint: ll
 env: flex
 runtime: ruby
+env_variables:
+  SECRET_KEY_BASE: b36ad1063cf2ae36201b9316bc1786a2891193ea6af5aaa8c76c9f0dac260197a1aa18d2c5fd9f831038d49f4cd8481f73dbf3489f5c2ec445fd165e45e30e1c
